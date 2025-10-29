@@ -1,0 +1,12 @@
+
+#before_install:
+#  - ./scripts/prepareJitpackEnvironment.sh
+
+ jdk:
+    - openjdk17
+
+ before_install:
+    - echo "Building only library module using Java 17"
+
+ install:
+    - ./gradlew :image-preview:assembleRelease :image-preview:publishToMavenLocal -xlint -xlintVitalAnalyzeRelease
